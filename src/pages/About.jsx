@@ -50,7 +50,7 @@ export default function About() {
         {/* Story */}
         <section className="section-padding bg-petal">
           <div className="container-custom">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="max-w-3xl mx-auto text-center">
               <FadeUp>
                 <div>
                   <p className="font-body text-xs tracking-[0.4em] uppercase text-rose mb-6">Kurucu Vizyonu</p>
@@ -69,25 +69,6 @@ export default function About() {
                       Her şişe, her kavanoz, her damlacık — özenle, sevgiyle ve sorumlulukla hazırlanmıştır.
                     </p>
                   </div>
-                </div>
-              </FadeUp>
-
-              {/* Masonry Gallery */}
-              <FadeUp delay={0.15}>
-                <div className="grid grid-cols-3 gap-3">
-                  {masonry.map((item, i) => (
-                    <div
-                      key={i}
-                      className={`overflow-hidden bg-blush/40 rounded-sm ${item.tall ? 'row-span-2' : ''}`}
-                      style={{ aspectRatio: item.tall ? '3/5' : '1/1' }}
-                    >
-                      <img
-                        src={item.src}
-                        alt=""
-                        className="w-full h-full object-contain p-4 hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                  ))}
                 </div>
               </FadeUp>
             </div>
