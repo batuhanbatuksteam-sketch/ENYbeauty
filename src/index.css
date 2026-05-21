@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background-color: #fdecec;
+    color: #2d1b1f;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-charcoal text-ivory px-8 py-3.5 text-sm font-body font-medium tracking-widest uppercase transition-all duration-300 hover:bg-rose-deep hover:text-white;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border border-charcoal text-charcoal px-8 py-3.5 text-sm font-body font-medium tracking-widest uppercase transition-all duration-300 hover:bg-charcoal hover:text-ivory;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-12;
+  }
+
+  .heading-xl {
+    @apply text-5xl md:text-7xl lg:text-8xl font-display font-light leading-none tracking-tight;
+  }
+
+  .heading-lg {
+    @apply text-4xl md:text-5xl lg:text-6xl font-display font-light leading-tight;
+  }
+
+  .heading-md {
+    @apply text-2xl md:text-3xl lg:text-4xl font-display font-light leading-tight;
+  }
+
+  .nav-link {
+    @apply font-body text-sm tracking-widest uppercase text-charcoal/80 hover:text-rose-deep transition-colors duration-300 relative;
+  }
+
+  .product-card {
+    @apply transition-all duration-500 hover:-translate-y-1;
+  }
+
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-md border border-white/60 shadow-lg;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #d4607a, #ffa4c4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-petal {
+    background: linear-gradient(135deg, #fdecec 0%, #ffd7e0 50%, #fdecec 100%);
+  }
+
+  .bg-rose-gradient {
+    background: linear-gradient(135deg, #ffa4c4 0%, #d4607a 100%);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fdecec;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffa4c4;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4607a;
+}
+
+/* Page transition overlay */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 400ms, transform 400ms;
+}
