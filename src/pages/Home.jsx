@@ -258,7 +258,7 @@ export default function Home() {
               </svg>
               <p className="font-display text-3xl sm:text-5xl font-light text-white leading-tight mb-8 italic">
                 Güzellik bir his,<br/>
-                <span className="rose-text not-italic font-semibold">bir standar değil.</span>
+                <span className="rose-text not-italic font-semibold">bir standart değil.</span>
               </p>
               <div className="flex items-center justify-center gap-4">
                 <div className="h-px w-12 bg-rose/40" />
