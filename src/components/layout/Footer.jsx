@@ -22,7 +22,7 @@ export default function Footer() {
 
           {/* Brand col */}
           <div className="md:col-span-1 space-y-5">
-            <img src="/logo üst kısım.png" alt="ENY Beauty" className="h-12 w-auto object-contain brightness-0 invert opacity-90" />
+            <img src="/logo.png" alt="ENY Beauty" className="h-12 w-auto object-contain brightness-0 invert opacity-90" />
             <p className="font-sans text-sm text-white/55 leading-relaxed max-w-xs">
               Doğanın zarafetini lüks kozmetikle buluşturan ENY Beauty. Vegan formüller, sürdürülebilir üretim, kusursuz sonuçlar.
             </p>

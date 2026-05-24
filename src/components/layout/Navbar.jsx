@@ -40,7 +40,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 group" aria-label="ENY Beauty Ana Sayfa">
               <img
-                src="/logo üst kısım.png"
+                src="/logo.png"
                 alt="ENY Beauty Logo"
                 className="h-12 w-auto object-contain"
               />
@@ -107,7 +107,7 @@ export default function Navbar() {
             </button>
 
             {/* Logo in drawer */}
-            <img src="/logo üst kısım.png" alt="ENY Beauty" className="h-12 w-auto object-contain" />
+            <img src="/logo.png" alt="ENY Beauty" className="h-12 w-auto object-contain" />
 
             {/* Links */}
             {links.map(({ to, label }, i) => (

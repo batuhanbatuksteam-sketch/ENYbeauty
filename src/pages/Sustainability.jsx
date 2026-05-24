@@ -76,14 +76,14 @@ export default function Sustainability() {
           <picture className="absolute inset-0">
             <source
               media="(max-width: 767px)"
-              srcSet="/sürdürülebilirlik yaklaşım sayfası banner mobil.jpg"
+              srcSet="/sustainability-banner-mobile.jpg"
             />
             <source
               media="(min-width: 768px)"
-              srcSet="/sürdürülebilirlik yaklaşımımız sayfası banneri masaüstü.jpg"
+              srcSet="/sustainability-banner-desktop.jpg"
             />
             <img
-              src="/sürdürülebilirlik yaklaşımımız sayfası banneri masaüstü.jpg"
+              src="/sustainability-banner-desktop.jpg"
               alt="ENY Beauty Sürdürülebilirlik"
               className="w-full h-full object-cover object-center"
             />

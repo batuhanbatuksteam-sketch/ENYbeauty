@@ -9,7 +9,7 @@ const products = [
     slug: 'parfum',
     category: 'Koku',
     desc: 'Çiçeksi ve odunsu notaların mükemmel uyumu. Vanilya, gül ve sandal ağacı kalbinden gelen bu özel formül, cildinizde saatler boyunca zarif bir iz bırakır. Kalıcılığı ile benzersiz, duruşuyla ayırt edici.',
-    img: '/ürün görselleri/parfüm.png',
+    img: '/products/parfum.png',
     tag: 'Bestseller',
   },
   {
@@ -18,7 +18,7 @@ const products = [
     slug: 'el-kremi',
     category: 'Bakım',
     desc: 'Shea yağı ve organik gül suyu zenginliğiyle formüle edilen el kremi, elleri derinlemesine besler ve nem dengesini uzun süre korur. Her kullanımda ipek gibi bir his sunar.',
-    img: '/ürün görselleri/el kremi.png',
+    img: '/products/el-kremi.png',
     tag: 'Yeni',
   },
   {
@@ -27,7 +27,7 @@ const products = [
     slug: 'vucut-kremi',
     category: 'Bakım',
     desc: 'Hyalüronik asit ve peptid kompleksiyle cildi 48 saat boyunca nemlendirir. Hafif ve hızlı emilen dokusuyla günlük kullanıma uygun, lüks bir deneyim sunar.',
-    img: '/ürün görselleri/vücut kremi.png',
+    img: '/products/vucut-kremi.png',
     tag: 'Favori',
   },
   {
@@ -36,7 +36,7 @@ const products = [
     slug: 'vucut-spreyi',
     category: 'Koku',
     desc: 'Hafif ve ferahlatıcı formülüyle gün içinde tazelik sunan vücut spreyi. Doğal botanik özleriyle zenginleştirilmiş, cildi nemlendiren ve hoş bir koku bırakan çok amaçlı bir bakım ürünü.',
-    img: '/ürün görselleri/vücut spreyi.png',
+    img: '/products/vucut-spreyi.png',
     tag: null,
   },
   {
@@ -45,7 +45,7 @@ const products = [
     slug: 'sampuan',
     category: 'Saç',
     desc: 'Keratin ve argan yağı kompleksiyle saçı besleyen, parlatıcı etkili şampuan. Sülfatsız formülüyle boyalı saçlara özel, skalp dengesini koruyan ve saçı canlı tutan etkin bir bakım formülü.',
-    img: '/ürün görselleri/şampuan.png',
+    img: '/products/sampuan.png',
     tag: null,
   },
   {
@@ -54,7 +54,7 @@ const products = [
     slug: 'sac-kremi',
     category: 'Saç',
     desc: 'Derin nemlendirici saç kremi, her saç tipine uygun besleyici formülüyle saçı güçlendirir, pürüzsüzleştirir ve yoğun parlaklık katar. Biotin ve provitamin B5 içerir.',
-    img: '/ürün görselleri/saç kremi.png',
+    img: '/products/sac-kremi.png',
     tag: null,
   },
   {
@@ -63,7 +63,7 @@ const products = [
     slug: 'dus-jeli',
     category: 'Vücut',
     desc: 'Aloe vera ve organik lavanta özleriyle zenginleştirilmiş duş jeli. Cildi tahriş etmeyen nazik formülü, duş sonrasında taze ve nemli bir his bırakır. Dermatolog tarafından test edilmiştir.',
-    img: '/ürün görselleri/duj jeli.png',
+    img: '/products/dus-jeli.png',
     tag: null,
   },
   {
@@ -72,7 +72,7 @@ const products = [
     slug: 'peeling',
     category: 'Vücut',
     desc: 'Nar ekstresi ve deniz tuzu içeren lüks vücut peelingi. Ölü cilt hücrelerini nazikçe uzaklaştırırken cildi derinlemesine nemlendiren çift etkili premium formül.',
-    img: '/ürün görselleri/peeling.png',
+    img: '/products/peeling.png',
     tag: 'Özel',
   },
   {
@@ -81,7 +81,7 @@ const products = [
     slug: 'deodorant',
     category: 'Vücut',
     desc: 'Alüminyum tuzları içermeyen, %48 saatlik koruma sunan doğal deodorant. Cilt dostu probiyotik formülüyle hassas ciltlere uygun, gün içinde taze ve güvende hissettiren bakım.',
-    img: '/ürün görselleri/deodorant.png',
+    img: '/products/deodorant.png',
     tag: null,
   },
 ]

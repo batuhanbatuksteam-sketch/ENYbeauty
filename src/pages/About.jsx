@@ -3,15 +3,15 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { FadeUp, PageTransition } from '../components/ui/animations'
 
 const galleryImages = [
-  { src: '/ürün görselleri/parfüm.png',       alt: 'ENY Beauty Parfüm'      },
-  { src: '/ürün görselleri/vücut kremi.png',   alt: 'ENY Beauty Vücut Kremi' },
-  { src: '/ürün görselleri/el kremi.png',      alt: 'ENY Beauty El Kremi'    },
-  { src: '/ürün görselleri/şampuan.png',       alt: 'ENY Beauty Şampuan'     },
-  { src: '/ürün görselleri/peeling.png',       alt: 'ENY Beauty Peeling'     },
-  { src: '/ürün görselleri/saç kremi.png',     alt: 'ENY Beauty Saç Kremi'   },
-  { src: '/ürün görselleri/deodorant.png',     alt: 'ENY Beauty Deodorant'   },
-  { src: '/ürün görselleri/duj jeli.png',      alt: 'ENY Beauty Duş Jeli'    },
-  { src: '/ürün görselleri/vücut spreyi.png',  alt: 'ENY Beauty Vücut Spreyi'},
+  { src: '/products/parfum.png',       alt: 'ENY Beauty Parfüm'      },
+  { src: '/products/vucut-kremi.png',   alt: 'ENY Beauty Vücut Kremi' },
+  { src: '/products/el-kremi.png',      alt: 'ENY Beauty El Kremi'    },
+  { src: '/products/sampuan.png',       alt: 'ENY Beauty Şampuan'     },
+  { src: '/products/peeling.png',       alt: 'ENY Beauty Peeling'     },
+  { src: '/products/sac-kremi.png',     alt: 'ENY Beauty Saç Kremi'   },
+  { src: '/products/deodorant.png',     alt: 'ENY Beauty Deodorant'   },
+  { src: '/products/dus-jeli.png',      alt: 'ENY Beauty Duş Jeli'    },
+  { src: '/products/vucut-spreyi.png',  alt: 'ENY Beauty Vücut Spreyi'},
 ]
 
 const values = [
@@ -47,7 +47,7 @@ export default function About() {
 
               <FadeUp delay={0}>
                 <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-card-lg">
-                  <img src="/ürün görselleri/parfüm.png" alt="ENY Beauty Marka Hikayesi" className="w-full h-full object-cover" loading="lazy" />
+                  <img src="/products/parfum.png" alt="ENY Beauty Marka Hikayesi" className="w-full h-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1a0a10]/30 via-transparent to-transparent" />
                 </div>
                 <div className="absolute -bottom-5 -right-4 bg-white rounded-2xl px-6 py-4 shadow-rose border border-blush/30 animate-float">

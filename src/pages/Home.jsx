@@ -8,21 +8,21 @@ const featuredProducts = [
     id: 1,
     name: 'Parfüm',
     desc: 'Çiçeksi ve odunsu notaların mükemmel uyumu. Uzun süre kalıcı, ince bir iz bırakan özel formül.',
-    img: '/ürün görselleri/parfüm.png',
+    img: '/products/parfum.png',
     tag: 'Bestseller',
   },
   {
     id: 2,
     name: 'El Kremi',
     desc: 'Shea yağı ve gül suyu zenginliğiyle elleri derinlemesine besleyen, ipek gibi bir his.',
-    img: '/ürün görselleri/el kremi.png',
+    img: '/products/el-kremi.png',
     tag: 'Yeni',
   },
   {
     id: 3,
     name: 'Vücut Kremi',
     desc: 'Hyalüronik asit kompleksiyle cildi 48 saat boyunca nemlendirir. Hafif doku, derin etki.',
-    img: '/ürün görselleri/vücut kremi.png',
+    img: '/products/vucut-kremi.png',
     tag: 'Favori',
   },
 ]
@@ -72,10 +72,10 @@ export default function Home() {
           {/* Desktop banner */}
           <motion.div style={{ y: heroY }} className="absolute inset-0 scale-110">
             <picture>
-              <source media="(max-width: 767px)" srcSet="/mobil banner.jpeg" />
-              <source media="(min-width: 768px)" srcSet="/banner masaüstü .jpg" />
+              <source media="(max-width: 767px)" srcSet="/banner-mobile.jpeg" />
+              <source media="(min-width: 768px)" srcSet="/banner-desktop.jpg" />
               <img
-                src="/banner masaüstü .jpg"
+                src="/banner-desktop.jpg"
                 alt="ENY Beauty — Premium Kozmetik"
                 className="w-full h-full object-cover object-center"
               />
@@ -93,7 +93,7 @@ export default function Home() {
               relative z-10 h-full
               flex flex-col
               md:items-start md:justify-center md:pl-16 lg:pl-24
-              items-start justify-start pt-28 px-6
+              items-start justify-start pt-28 px-4 sm:px-6
             "
           >
             {/* Eyebrow */}
@@ -141,7 +141,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.9 }}
-              className="flex flex-wrap gap-3"
+              className="flex flex-col sm:flex-row gap-3 items-start"
             >
               <Link to="/urunlerimiz" className="btn-primary">
                 Koleksiyonu Keşfet
@@ -246,7 +246,7 @@ export default function Home() {
         {/* ── PHILOSOPHY QUOTE ── */}
         <section className="relative py-28 overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a0a10 0%, #2d1020 50%, #1a0a10 100%)' }}>
           <div className="absolute inset-0 opacity-20 pointer-events-none">
-            <img src="/banner masaüstü .jpg" alt="" className="w-full h-full object-cover" aria-hidden="true" />
+            <img src="/banner-desktop.jpg" alt="" className="w-full h-full object-cover" aria-hidden="true" />
           </div>
           <div className="absolute inset-0 bg-gradient-to-br from-[#1a0a10]/90 to-[#2d1020]/80" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-rose/5 blur-3xl pointer-events-none" />
@@ -275,7 +275,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
               <FadeUp className="relative">
                 <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-card-lg">
-                  <img src="/ürün görselleri/vücut kremi.png" alt="ENY Beauty Sürdürülebilirlik" className="w-full h-full object-cover" loading="lazy" />
+                  <img src="/products/vucut-kremi.png" alt="ENY Beauty Sürdürülebilirlik" className="w-full h-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1a0a10]/40 via-transparent to-transparent" />
                 </div>
                 <div className="absolute -bottom-5 -right-4 bg-white rounded-2xl px-6 py-4 shadow-rose border border-blush/40 animate-float">
