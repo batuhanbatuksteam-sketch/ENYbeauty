@@ -1,32 +1,42 @@
-import { Routes, Route, useLocation } from 'react-router-dom'
-import { AnimatePresence } from 'framer-motion'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
-import ScrollToTop from './components/ui/ScrollToTop'
 import Home from './pages/Home'
 import Products from './pages/Products'
 import About from './pages/About'
 import Sustainability from './pages/Sustainability'
 
-function App() {
-  const location = useLocation()
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [pathname])
+  return null
+}
 
+function AnimatedRoutes() {
+  const location = useLocation()
   return (
-    <>
-      <ScrollToTop />
-      <Navbar />
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home />} />
-          <Route path="/urunlerimiz" element={<Products />} />
-          <Route path="/hakkimizda" element={<About />} />
-          <Route path="/surdurulebilirlik" element={<Sustainability />} />
-        </Routes>
-      </AnimatePresence>
-      <Footer />
-    </>
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/"                   element={<Home />}           />
+        <Route path="/urunlerimiz"        element={<Products />}       />
+        <Route path="/hakkimizda"         element={<About />}          />
+        <Route path="/surdurulebilirlik"  element={<Sustainability />} />
+      </Routes>
+    </AnimatePresence>
   )
 }
 
-export default App
+export default function App() {
+  return (
+    <BrowserRouter>
+      <ScrollToTop />
+      <Navbar />
+      <AnimatedRoutes />
+      <Footer />
+    </BrowserRouter>
+  )
+}

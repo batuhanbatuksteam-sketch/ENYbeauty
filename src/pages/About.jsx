@@ -1,96 +1,143 @@
-import PageWrapper from '../components/ui/PageWrapper'
-import FadeUp from '../components/ui/FadeUp'
+import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { FadeUp, PageTransition } from '../components/ui/animations'
+
+const galleryImages = [
+  { src: '/ürün görselleri/parfüm.png',       alt: 'ENY Beauty Parfüm'      },
+  { src: '/ürün görselleri/vücut kremi.png',   alt: 'ENY Beauty Vücut Kremi' },
+  { src: '/ürün görselleri/el kremi.png',      alt: 'ENY Beauty El Kremi'    },
+  { src: '/ürün görselleri/şampuan.png',       alt: 'ENY Beauty Şampuan'     },
+  { src: '/ürün görselleri/peeling.png',       alt: 'ENY Beauty Peeling'     },
+  { src: '/ürün görselleri/saç kremi.png',     alt: 'ENY Beauty Saç Kremi'   },
+  { src: '/ürün görselleri/deodorant.png',     alt: 'ENY Beauty Deodorant'   },
+  { src: '/ürün görselleri/duj jeli.png',      alt: 'ENY Beauty Duş Jeli'    },
+  { src: '/ürün görselleri/vücut spreyi.png',  alt: 'ENY Beauty Vücut Spreyi'},
+]
 
 const values = [
-  { icon: '✦', title: 'Saflık', desc: 'Her formülümüzde yalnızca en saf, doğal kaynaklı bileşenler kullanıyoruz. Zararlı kimyasallar, sentetik dolgular — asla.' },
-  { icon: '◈', title: 'Bilim', desc: 'Dermatoloji uzmanlarıyla geliştirilen formüllerimiz, etkinliği bilimsel araştırmalarla kanıtlanmış aktif bileşenler içeriyor.' },
-  { icon: '❋', title: 'Etik', desc: 'Cruelty-free sertifikalı, vegan formüller ve şeffaf tedarik zinciriyle güzellik artık vicdan rahatlığıyla kullanılabiliyor.' },
-  { icon: '◉', title: 'Sürdürülebilirlik', desc: 'Geri dönüştürülebilir ambalajlar, karbon-nötr teslimat ve sıfır atık üretim hedefiyle çevreye olan borcumuzu ödüyoruz.' },
-]
-
-const milestones = [
-  { year: '2026', title: 'Kuruluş', desc: 'İstanbul\'da küçük bir atölyede, büyük bir hayalle başladık.' },
-  { year: '2027', title: 'İlk Koleksiyon', desc: '9 ürünlük ilk el kremi ve vücut bakım serimizi piyasaya sürdük.' },
-  { year: '2029', title: 'Cruelty Free Sertifikası', desc: 'Uluslararası Cruelty Free International sertifikamızı aldık.' },
-  { year: '2031', title: 'Sürdürülebilirlik Taahhüdü', desc: 'Sıfır atık hedefini ve yenilenebilir enerji kullanımını duyurduk.' },
-]
-
-const masonry = [
-  { src: '/ürün görselleri/el kremi.png', tall: true },
-  { src: '/ürün görselleri/parfüm.png', tall: false },
-  { src: '/ürün görselleri/vücut kremi.png', tall: false },
-  { src: '/ürün görselleri/peeling.png', tall: true },
-  { src: '/ürün görselleri/şampuan.png', tall: false },
-  { src: '/ürün görselleri/deodorant.png', tall: false },
+  { title: 'Özgünlük', desc: 'Her formül, gerçek ihtiyaçlardan doğar. Klişe değil, özgün güzellik anlayışı.' },
+  { title: 'Şeffaflık', desc: 'İçeriklerimizden üretim süreçlerimize kadar her aşamada açık ve dürüstüz.' },
+  { title: 'Zarafet', desc: 'Minimalist tasarım diliyle, abartısız ama etkili. Her dokunuşta bir deneyim.' },
+  { title: 'Sorumluluk', desc: 'Gezegenimize, hayvanlarımıza ve insanlığa karşı derin bir sorumluluk hissediyoruz.' },
 ]
 
 export default function About() {
+  const [lightbox, setLightbox] = useState(null)
+
   return (
-    <PageWrapper>
+    <PageTransition>
       <main>
-        {/* Hero */}
-        <section className="bg-charcoal pt-36 pb-28 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-rose rounded-full blur-3xl translate-y-1/2 -translate-x-1/4" />
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blush rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
-          </div>
-          <div className="container-custom relative z-10 max-w-4xl">
-            <FadeUp>
-              <p className="font-body text-xs tracking-[0.4em] uppercase text-rose mb-6">Hikayemiz</p>
-              <h1 className="heading-xl text-ivory mb-8">
-                Hakkımızda
-              </h1>
-              <p className="font-body text-lg text-ivory/60 leading-relaxed max-w-2xl">
-                ENY Beauty, güzelliğin yalnızca bir görüntü meselesi olmadığına inananlar için tasarlandı. Biz güzelliği bir duygu, bir felsefe ve sorumluluk olarak tanımlıyoruz.
-              </p>
-            </FadeUp>
-          </div>
+        {/* ── HERO ── */}
+        <section className="pt-32 pb-20 bg-ivory text-center">
+          <FadeUp>
+            <div className="petal-divider max-w-xs mx-auto mb-5">
+              <span className="font-sans text-xs tracking-[0.22em] uppercase text-mink">Kimiz?</span>
+            </div>
+            <h1 className="font-display text-5xl sm:text-6xl text-[#2d1a22] mb-5">Hakkımızda</h1>
+            <p className="font-sans text-base text-[#6b4455] max-w-2xl mx-auto leading-relaxed">
+              ENY Beauty; güzelliği bir standart değil, bir his olarak tanımlar. Her ürünümüz bu felsefeyle hayat bulur.
+            </p>
+          </FadeUp>
         </section>
 
-        {/* Story */}
-        <section className="section-padding bg-petal">
-          <div className="container-custom">
-            <div className="max-w-3xl mx-auto text-center">
-              <FadeUp>
-                <div>
-                  <p className="font-body text-xs tracking-[0.4em] uppercase text-rose mb-6">Kurucu Vizyonu</p>
-                  <h2 className="heading-lg text-charcoal mb-8">
-                    Bir çiçekten<br />
-                    <span className="italic text-rose-deep">ilham aldık</span>
-                  </h2>
-                  <div className="space-y-5 font-body text-base text-warm-gray leading-relaxed">
-                    <p>
-                      ENY Beauty'nin hikayesi, bir güzel uyanışla başladı. Kurucumuz Ezgi, 2026 yılında kendi cildi için güvenli, saf ve etkili bir ürün arayışına girdiğinde — rafların zararlı kimyasallarla dolu olduğunu fark etti.
-                    </p>
-                    <p>
-                      O günden bu yana misyonumuz değişmedi: Doğanın en saf özleriyle, bilimin titizliğini birleştirerek — hem cilde hem gezegene saygılı ürünler üretmek.
-                    </p>
-                    <p>
-                      Her şişe, her kavanoz, her damlacık — özenle, sevgiyle ve sorumlulukla hazırlanmıştır.
-                    </p>
-                  </div>
+        {/* ── BRAND STORY ── */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+              <FadeUp delay={0}>
+                <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-card-lg">
+                  <img src="/ürün görselleri/parfüm.png" alt="ENY Beauty Marka Hikayesi" className="w-full h-full object-cover" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1a0a10]/30 via-transparent to-transparent" />
+                </div>
+                <div className="absolute -bottom-5 -right-4 bg-white rounded-2xl px-6 py-4 shadow-rose border border-blush/30 animate-float">
+                  <p className="font-sans text-xs text-mink uppercase tracking-widest mb-0.5">Kuruluş</p>
+                  <p className="font-display text-lg text-[#2d1a22]">ENY Beauty</p>
                 </div>
               </FadeUp>
+
+              <div className="flex flex-col gap-6">
+                <FadeUp delay={0.1}>
+                  <div className="petal-divider max-w-xs">
+                    <span className="font-sans text-xs tracking-[0.22em] uppercase text-mink">Hikayemiz</span>
+                  </div>
+                </FadeUp>
+                <FadeUp delay={0.2}>
+                  <h2 className="font-display text-4xl sm:text-5xl text-[#2d1a22] leading-tight">
+                    Güzelliğin <br />
+                    <span className="text-roseDeep italic">Yeni Tanımı</span>
+                  </h2>
+                </FadeUp>
+                <FadeUp delay={0.3}>
+                  <p className="font-sans text-base text-[#6b4455] leading-relaxed">
+                    ENY Beauty, güzelliğin herkes için erişilebilir, samimi ve dönüştürücü olabileceği inancıyla kuruldu. Lüks kozmetiği demokratikleştirme vizyonuyla yola çıktık; bugün ise her formülümüz, bu vizyonun somut bir yansıması.
+                  </p>
+                </FadeUp>
+                <FadeUp delay={0.4}>
+                  <p className="font-sans text-base text-[#6b4455] leading-relaxed">
+                    Vegan içerikler, sürdürülebilir ambalajlar ve şeffaf üretim süreçleriyle hazırlanan her ürün; cildinize, ruhunuza ve gezegenimize saygının bir ifadesidir. Çünkü biz, güzelliğin asla bir bedele mal olmaması gerektiğine inanıyoruz — ne cildimize, ne doğamıza, ne de vicdanımıza.
+                  </p>
+                </FadeUp>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Values */}
-        <section className="section-padding bg-charcoal">
-          <div className="container-custom">
+        {/* ── FOUNDER VISION ── */}
+        <section className="py-24 bg-ivory">
+          <div className="max-w-4xl mx-auto px-5 sm:px-8 text-center">
             <FadeUp>
-              <div className="text-center mb-16">
-                <p className="font-body text-xs tracking-[0.4em] uppercase text-rose mb-4">İlkelerimiz</p>
-                <h2 className="heading-lg text-ivory">Değerlerimiz</h2>
+              <div className="petal-divider max-w-xs mx-auto mb-8">
+                <span className="font-sans text-xs tracking-[0.22em] uppercase text-mink">Kurucu Vizyonu</span>
               </div>
+              <blockquote className="font-script text-3xl sm:text-4xl text-[#2d1a22] leading-relaxed italic mb-8">
+                "Doğa bize mükemmel formülleri zaten sunuyor. Bizim görevimiz, bu güzelliği saygıyla işleyip sizlere ulaştırmak."
+              </blockquote>
+              <p className="font-sans text-sm text-mink tracking-wide">— ENY Beauty, Kurucu Ekibi</p>
             </FadeUp>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          </div>
+        </section>
+
+        {/* ── VALUES GRID ── */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+            <FadeUp className="text-center mb-14">
+              <h2 className="font-display text-4xl text-[#2d1a22] mb-3">Değerlerimiz</h2>
+              <p className="font-sans text-sm text-[#6b4455] max-w-md mx-auto">Her kararımızın, her formülümüzün arkasında duran ilkeler.</p>
+            </FadeUp>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {values.map((v, i) => (
-                <FadeUp key={v.title} delay={i * 0.1}>
-                  <div className="border border-ivory/10 p-8 hover:border-rose/40 transition-colors duration-400 group">
-                    <span className="font-display text-3xl text-rose/60 group-hover:text-rose transition-colors duration-300 block mb-6">{v.icon}</span>
-                    <h3 className="font-display text-2xl text-ivory mb-3">{v.title}</h3>
-                    <p className="font-body text-sm text-ivory/50 leading-relaxed">{v.desc}</p>
+                <FadeUp key={i} delay={i * 0.1}
+                  className="p-8 rounded-2xl bg-cream border border-blush/30 hover:border-rose/40 hover:shadow-card transition-all duration-400 text-center"
+                >
+                  <div className="w-12 h-12 rounded-full bg-blush/50 flex items-center justify-center mx-auto mb-4">
+                    <span className="font-display text-lg text-roseDeep font-semibold">{(i + 1).toString().padStart(2, '0')}</span>
+                  </div>
+                  <h3 className="font-display text-lg text-[#2d1a22] mb-3">{v.title}</h3>
+                  <p className="font-sans text-sm text-[#6b4455] leading-relaxed">{v.desc}</p>
+                </FadeUp>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── MASONRY GALLERY ── */}
+        <section className="py-24 bg-ivory">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+            <FadeUp className="text-center mb-12">
+              <div className="petal-divider max-w-xs mx-auto mb-5">
+                <span className="font-sans text-xs tracking-[0.22em] uppercase text-mink">Koleksiyon</span>
+              </div>
+              <h2 className="font-display text-4xl text-[#2d1a22]">Ürün Galerisi</h2>
+            </FadeUp>
+            <div className="masonry">
+              {galleryImages.map((img, i) => (
+                <FadeUp key={i} delay={i * 0.06}>
+                  <div
+                    className="gallery-card"
+                    onClick={() => setLightbox(img)}
+                  >
+                    <img src={img.src} alt={img.alt} loading="lazy" />
                   </div>
                 </FadeUp>
               ))}
@@ -98,65 +145,39 @@ export default function About() {
           </div>
         </section>
 
-        {/* Timeline */}
-        <section className="section-padding bg-petal">
-          <div className="container-custom max-w-3xl">
-            <FadeUp>
-              <div className="text-center mb-16">
-                <p className="font-body text-xs tracking-[0.4em] uppercase text-rose mb-4">Yolculuğumuz</p>
-                <h2 className="heading-lg text-charcoal">Kilometre Taşları</h2>
-              </div>
-            </FadeUp>
-            <div className="relative">
-              {/* vertical line */}
-              <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-blush md:-translate-x-1/2" />
-              <div className="space-y-12">
-                {milestones.map((m, i) => (
-                  <FadeUp key={m.year} delay={i * 0.1}>
-                    <div className={`relative flex flex-col md:flex-row gap-8 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                      {/* dot */}
-                      <div className="absolute left-0 md:left-1/2 top-2 w-3 h-3 rounded-full bg-rose -translate-x-1/2 md:-translate-x-1/2 ring-4 ring-ivory" />
-                      <div className={`pl-8 md:pl-0 md:w-1/2 ${i % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                        <span className="font-body text-xs tracking-widest text-rose uppercase block mb-1">{m.year}</span>
-                        <h3 className="font-display text-2xl text-charcoal mb-2">{m.title}</h3>
-                        <p className="font-body text-sm text-warm-gray leading-relaxed">{m.desc}</p>
-                      </div>
-                      <div className="md:w-1/2" />
-                    </div>
-                  </FadeUp>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Quality Standards */}
-        <section className="section-padding bg-white/60">
-          <div className="container-custom">
-            <FadeUp>
-              <div className="text-center mb-16">
-                <p className="font-body text-xs tracking-[0.4em] uppercase text-rose mb-4">Standartlarımız</p>
-                <h2 className="heading-lg text-charcoal">Kalite Güvencesi</h2>
-              </div>
-            </FadeUp>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              {[
-                { num: '100%', label: 'Doğal Bileşen' },
-                { num: '48h', label: 'Uzun Süreli Etki' },
-                { num: '0', label: 'Zararlı Kimyasal' },
-                { num: '9+', label: 'Ürün Serisi' },
-              ].map((stat) => (
-                <FadeUp key={stat.label}>
-                  <div className="py-10 border border-blush/60 bg-ivory/60">
-                    <div className="font-display text-5xl text-rose-deep mb-2">{stat.num}</div>
-                    <div className="font-body text-xs tracking-widest uppercase text-warm-gray">{stat.label}</div>
-                  </div>
-                </FadeUp>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Lightbox */}
+        <AnimatePresence>
+          {lightbox && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="lightbox-overlay"
+              onClick={() => setLightbox(null)}
+            >
+              <motion.div
+                initial={{ scale: 0.85, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.85, opacity: 0 }}
+                transition={{ type: 'spring', damping: 26, stiffness: 260 }}
+                className="relative max-w-2xl w-full mx-4"
+                onClick={e => e.stopPropagation()}
+              >
+                <img src={lightbox.src} alt={lightbox.alt} className="w-full rounded-3xl object-contain max-h-[85vh]" />
+                <button
+                  onClick={() => setLightbox(null)}
+                  className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-[#2d1a22] hover:bg-white transition-colors shadow-soft"
+                  aria-label="Kapat"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                  </svg>
+                </button>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </main>
-    </PageWrapper>
+    </PageTransition>
   )
 }
